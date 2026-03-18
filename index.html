@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UC7 - Painel de projetos web: Inova Tech e São Miguel do Gostoso." />
+  <meta name="author" content="Koldri" />
+  <title>UC7 | Painel de Projetos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #6C2BD9;
+      --secondary: #FF4D6D;
+      --accent:    #00D4FF;
+      --dark:      #0D0A1E;
+      --light:     #F0EEFF;
+      --white:     #FFFFFF;
+      --muted:     #7C7A8E;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* === HEADER === */
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      display: block;
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      margin: 1rem auto 0;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(108,43,217,0.25);
+      border: 1px solid rgba(108,43,217,0.5);
+      color: #b48ef5;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--white), #b48ef5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    /* === MAIN === */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* === CARD === */
+    .project-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .project-card.card-instituicao::before {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .project-card.card-cidade::before {
+      background: linear-gradient(90deg, #00b894, #00cec9);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-instituicao .card-tag {
+      background: rgba(108,43,217,0.25);
+      color: #b48ef5;
+      border: 1px solid rgba(108,43,217,0.4);
+    }
+
+    .card-cidade .card-tag {
+      background: rgba(0,184,148,0.2);
+      color: #55efc4;
+      border: 1px solid rgba(0,184,148,0.4);
+    }
+
+    .project-card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Sub-links das páginas internas */
+    .sub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sub-link {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .sub-link:hover {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* Botão principal */
+    .btn-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .card-instituicao .btn-card {
+      background: linear-gradient(135deg, var(--primary), #8B5CF6);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(108,43,217,0.4);
+    }
+
+    .card-instituicao .btn-card:hover {
+      box-shadow: 0 8px 28px rgba(108,43,217,0.6);
+      transform: translateY(-2px);
+    }
+
+    .card-cidade .btn-card {
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(0,184,148,0.4);
+    }
+
+    .card-cidade .btn-card:hover {
+      box-shadow: 0 8px 28px rgba(0,184,148,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer span { color: rgba(255,255,255,0.45); }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 640px) {
+      header h1 { font-size: 2.5rem; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="header-badge">📁 UC7 — Projetos Web</p>
+    <h1>Painel de Projetos</h1>
+    <p>Selecione um projeto para acessar</p>
+  </header>
+
+  <main>
+    <div class="projects-grid">
+
+      <!-- PROJETO 1: INOVA TECH -->
+      <article class="project-card card-instituicao">
+        <span class="card-icon">🎓</span>
+        <span class="card-tag">Instituição Acadêmica</span>
+        <h2>Inova Tech</h2>
+        <p>Portal do Centro de Capacitação Profissional com 12 cursos, grade curricular, secretaria virtual e formulários de matrícula.</p>
+
+        <div class="sub-links">
+          <a href="instituicao/pages/cursos.html"           class="sub-link">📚 Cursos</a>
+          <a href="instituicao/pages/grade-curricular.html" class="sub-link">📋 Grade Curricular</a>
+          <a href="instituicao/pages/secretaria.html"       class="sub-link">📝 Secretaria</a>
+        </div>
+
+        <a href="instituicao/index.html" class="btn-card">🚀 Acessar Portal</a>
+      </article>
+
+      <!-- PROJETO 2: CIDADE -->
+      <article class="project-card card-cidade">
+        <span class="card-icon">🌊</span>
+        <span class="card-tag">Turismo & Cidade</span>
+        <h2>São Miguel do Gostoso</h2>
+        <p>Portal turístico da cidade de São Miguel do Gostoso — RN, com pontos turísticos, gastronomia e cultura local.</p>
+
+        <div class="sub-links">
+          <a href="cidade/pontos-turisticos.html" class="sub-link">📍 Pontos Turísticos</a>
+          <a href="cidade/gastronomia.html"       class="sub-link">🍽 Gastronomia</a>
+          <a href="cidade/cultura.html"           class="sub-link">🎵 Cultura</a>
+        </div>
+
+        <a href="cidade/index.html" class="btn-card">🌴 Acessar Portal</a>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>UC7 — Desenvolvimento Web &nbsp;|&nbsp; <span>Autor: Koldri</span> &nbsp;|&nbsp; &copy; 2026</p>
+  </footer>
+
+</body>
+</html>
