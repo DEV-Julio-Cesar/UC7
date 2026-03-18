@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- 1. METADADOS OBRIGATÓRIOS (Requisito Senac) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grade curricular completa dos cursos da Inova Tech - Centro de Capacitação Profissional. Disciplinas, carga horária e ementa detalhada." />
+  <meta name="author" content="Koldri" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%236C2BD9'/><text y='.9em' font-size='70' x='10' fill='white' font-weight='900'>IT</text></svg>" />
+  <title>Grade Curricular | Inova Tech</title>
+
+  <!-- CSS Externo (Requisito: priorizar CSS externo via link) -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- CSS Interno (Requisito: CSS interno para estilos específicos da página) -->
+  <style>
+    /* === ESTILOS ESPECÍFICOS DA GRADE CURRICULAR === */
+
+    /* Seletor de elemento */
+    caption {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 0.75rem;
+      text-align: left;
+      background: var(--light);
+      border-radius: 8px 8px 0 0;
+      border-left: 4px solid var(--secondary);
+    }
+
+    /* Seletor de ID — seção única de introdução */
+    #intro-grade {
+      background: linear-gradient(135deg, var(--primary-dk), var(--primary));
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      border-left: 4px solid var(--secondary);
+    }
+
+    #intro-grade strong { color: var(--secondary); }
+
+    /* Seletor de classe — wrapper de cada tabela */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Seletor de elemento — tabela base */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      background: var(--white);
+    }
+
+    /* thead com cor de fundo */
+    thead tr {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    th {
+      padding: 0.9rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e8e0f5;
+      vertical-align: middle;
+      color: var(--text);
+    }
+
+    /* Classe para células de destaque */
+    .td-modulo {
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--light);
+      text-align: center;
+    }
+
+    /* Classe para carga horária */
+    .td-horas {
+      text-align: center;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    /* Classe para linha de total no tfoot */
+    .tr-total {
+      background: var(--dark);
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .tr-total td {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    /* Zebra nas linhas do tbody */
+    tbody tr:nth-child(even) { background: #faf8ff; }
+    tbody tr:hover { background: #f0eeff; transition: background 0.2s; }
+
+    /* Classe para badge de nível */
+    .badge-nivel {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-basico   { background: #d1fae5; color: #065f46; }
+    .badge-medio    { background: #fef3c7; color: #92400e; }
+    .badge-avancado { background: #ede9fe; color: #5b21b6; }
+
+    /* Título de cada seção de curso */
+    .curso-titulo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 2.5rem 0 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--light);
+    }
+
+    .curso-titulo h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .curso-titulo .curso-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-lt));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* Box model explícito no conteúdo principal */
+    .grade-content {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Rodapé fixo de legenda */
+    .legenda-tabela {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--light);
+      border-top: 1px solid #e8e0f5;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .legenda-tabela span { display: flex; align-items: center; gap: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO (links horizontais sem sublinhado — Requisito UX/UI) ===== -->
+  <header>
+    <div class="header-inner container">
+      <a href="../index.html" class="logo" aria-label="Inova Tech - Página inicial">
+        <div class="logo-icon" aria-hidden="true">IT</div>
+        <div class="logo-text">
+          <strong>Inova Tech</strong>
+          <span>Centro de Capacitação</span>
+        </div>
+      </a>
+      <nav aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="grade-curricular.html" class="active" aria-current="page">Grade Curricular</a></li>
+          <li><a href="secretaria.html">Secretaria Virtual</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">Grade Curricular</h1>
+      <p>Disciplinas, carga horária e ementa detalhada de todos os nossos cursos.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+    <div class="grade-content">
+
+      <!-- Introdução (elemento com ID único) -->
+      <div id="intro-grade" role="note">
+        <strong>ℹ️ Como ler esta grade:</strong> cada tabela apresenta as disciplinas organizadas por módulo,
+        com carga horária individual e total. Use os badges de nível
+        (<span style="background:#d1fae5;color:#065f46;padding:0 6px;border-radius:4px;font-size:0.8rem;">Básico</span>
+        <span style="background:#fef3c7;color:#92400e;padding:0 6px;border-radius:4px;font-size:0.8rem;">Médio</span>
+        <span style="background:#ede9fe;color:#5b21b6;padding:0 6px;border-radius:4px;font-size:0.8rem;">Avançado</span>)
+        para identificar a progressão de cada disciplina.
+        A página é atualizada automaticamente a cada 30 segundos para exibir novidades.
+      </div>
+
+      <!-- ==========================================
+           CURSO 1 — DESENVOLVIMENTO WEB FULL STACK
+           ========================================== -->
+      <div class="curso-titulo">
+        <div class="curso-num">1</div>
+        <h2>Desenvolvimento Web Full Stack</h2>
+        <span class="tag" style="margin:0;">6 meses · 360h</span>
+      </div>
+
+      <div class="table-wrapper">
+        <!-- border="1" — Requisito: atributo border na tabela -->
+        <table border="1" aria-label="Grade curricular do curso de Desenvolvimento Web Full Stack">
+          <caption>📋 Grade Curricular — Desenvolvimento Web Full Stack</caption>
+          <thead>
+            <tr>
+              <th scope="col">Módulo</th>
+              <th scope="col">Disciplina</th>
+              <th scope="col">Nível</th>
+              <th scope="col">C/H (h)</th>
+              <th scope="col">Resumo da Ementa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rowspan: módulo 1 ocupa 3 linhas -->
+            <tr>
+              <td class="td-modulo" rowspan="3">Módulo 1<br/>Fundamentos</td>
+              <td>HTML5 Semântico e Acessibilidade</td>
+              <td><span class="badge-nivel badge-basico">Básico</span></td>
+              <td class="td-horas">20h</td>
+              <td>Estrutura semântica, tags HTML5, ARIA, boas práticas de acessibilidade.</td>
+            </tr>
+            <tr>
+              <td>CSS3, Flexbox e Grid Layout</td>
+              <td><span class="badge-nivel badge-basico">Básico</span></td>
+              <td class="td-horas">24h</td>
+              <td>Box model, layouts responsivos, animações e transições CSS.</td>
+            </tr>
+            <tr>
+              <td>JavaScript ES6+ e TypeScript</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">40h</td>
+              <td>Fundamentos JS, ES6+, tipagem estática com TypeScript, DOM manipulation.</td>
+            </tr>
+            <!-- rowspan: módulo 2 ocupa 2 linhas -->
+            <tr>
+              <td class="td-modulo" rowspan="2">Módulo 2<br/>Front-End</td>
+              <td>React.js com Hooks e Context API</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">48h</td>
+              <td>Componentes, estado, ciclo de vida, hooks customizados, gerenciamento de estado.</td>
+            </tr>
+            <tr>
+              <td>Estilização Avançada (Styled Components, Tailwind)</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">20h</td>
+              <td>CSS-in-JS, utility-first CSS, design systems e temas.</td>
+            </tr>
+            <!-- rowspan: módulo 3 ocupa 3 linhas -->
+            <tr>
+              <td class="td-modulo" rowspan="3">Módulo 3<br/>Back-End</td>
+              <td>Node.js, Express e REST APIs</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">48h</td>
+              <td>Servidor HTTP, rotas, middlewares, autenticação JWT, documentação Swagger.</td>
+            </tr>
+            <tr>
+              <td>Banco de Dados SQL e NoSQL</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">32h</td>
+              <td>PostgreSQL, MongoDB, ORM com Prisma, modelagem e queries avançadas.</td>
+            </tr>
+            <tr>
+              <td>Git, GitHub e Deploy em Nuvem</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">24h</td>
+              <td>Versionamento, pull requests, CI/CD básico, deploy na Vercel e Railway.</td>
+            </tr>
+            <!-- colspan: linha de projeto final mescla colunas -->
+            <tr>
+              <td class="td-modulo" colspan="2" align="center" bgcolor="#f0eeff">🏆 Projeto Final — Portfólio Full Stack</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">104h</td>
+              <td>Desenvolvimento de aplicação completa com front-end, back-end e banco de dados.</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="tr-total">
+              <td colspan="3" align="right">CARGA HORÁRIA TOTAL:</td>
+              <td>360h</td>
+              <td>8 disciplinas + projeto final</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="legenda-tabela">
+          <span>🟩 <strong>Básico:</strong> sem pré-requisitos</span>
+          <span>🟨 <strong>Médio:</strong> requer módulo anterior</span>
+          <span>🟪 <strong>Avançado:</strong> requer módulos 1 e 2</span>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           CURSO 2 — PYTHON & IA
+           ========================================== -->
+      <div class="curso-titulo">
+        <div class="curso-num" style="background:linear-gradient(135deg,#FF4D6D,#c9184a)">2</div>
+        <h2>Python & Inteligência Artificial</h2>
+        <span class="tag" style="margin:0;">5 meses · 300h</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table border="1" aria-label="Grade curricular do curso de Python e IA">
+          <caption>📋 Grade Curricular — Python & Inteligência Artificial</caption>
+          <thead>
+            <tr>
+              <th scope="col">Módulo</th>
+              <th scope="col">Disciplina</th>
+              <th scope="col">Nível</th>
+              <th scope="col">C/H (h)</th>
+              <th scope="col">Resumo da Ementa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-modulo" rowspan="3">Módulo 1<br/>Python Base</td>
+              <td>Fundamentos de Python</td>
+              <td><span class="badge-nivel badge-basico">Básico</span></td>
+              <td class="td-horas">30h</td>
+              <td>Sintaxe, tipos de dados, estruturas de controle, funções e módulos.</td>
+            </tr>
+            <tr>
+              <td>Estruturas de Dados e Algoritmos</td>
+              <td><span class="badge-nivel badge-basico">Básico</span></td>
+              <td class="td-horas">24h</td>
+              <td>Listas, dicionários, pilhas, filas, complexidade de algoritmos.</td>
+            </tr>
+            <tr>
+              <td>Pandas, NumPy e Matplotlib</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">32h</td>
+              <td>Manipulação de dados tabulares, operações vetoriais e visualização.</td>
+            </tr>
+            <tr>
+              <td class="td-modulo" rowspan="2">Módulo 2<br/>Machine Learning</td>
+              <td>Machine Learning com Scikit-learn</td>
+              <td><span class="badge-nivel badge-medio">Médio</span></td>
+              <td class="td-horas">40h</td>
+              <td>Regressão, classificação, clustering, validação cruzada e métricas.</td>
+            </tr>
+            <tr>
+              <td>Redes Neurais e Deep Learning</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">48h</td>
+              <td>TensorFlow, Keras, CNNs, RNNs, transfer learning e fine-tuning.</td>
+            </tr>
+            <tr>
+              <td class="td-modulo" rowspan="2">Módulo 3<br/>IA Aplicada</td>
+              <td>Processamento de Linguagem Natural (NLP)</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">36h</td>
+              <td>Tokenização, embeddings, transformers, BERT e integração com LLMs.</td>
+            </tr>
+            <tr>
+              <td>Projetos práticos com APIs de IA</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">40h</td>
+              <td>OpenAI API, LangChain, chatbots, automação inteligente e deploy.</td>
+            </tr>
+            <tr>
+              <td class="td-modulo" colspan="2" align="center" bgcolor="#fff0f3">🏆 Projeto Final — Aplicação de IA</td>
+              <td><span class="badge-nivel badge-avancado">Avançado</span></td>
+              <td class="td-horas">50h</td>
+              <td>Desenvolvimento de solução completa com IA integrada e interface web.</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="tr-total">
+              <td colspan="3" align="right">CARGA HORÁRIA TOTAL:</td>
+              <td>300h</td>
+              <td>7 disciplinas + projeto final</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="legenda-tabela">
+          <span>🟩 <strong>Básico:</strong> sem pré-requisitos</span>
+          <span>🟨 <strong>Médio:</strong> requer módulo anterior</span>
+          <span>🟪 <strong>Avançado:</strong> requer módulos 1 e 2</span>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TABELA RESUMO GERAL — todos os 12 cursos
+           ========================================== -->
+      <div class="curso-titulo">
+        <div class="curso-num" style="background:linear-gradient(135deg,#FFB703,#e09000)">★</div>
+        <h2>Resumo Geral — Todos os Cursos</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table border="1" aria-label="Resumo geral de todos os cursos da Inova Tech">
+          <caption>📊 Catálogo Completo de Cursos — Inova Tech 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Área</th>
+              <th scope="col">Duração</th>
+              <th scope="col">C/H Total</th>
+              <th scope="col">Modalidade</th>
+              <th scope="col">Início</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-horas">01</td>
+              <td><strong>Desenvolvimento Web Full Stack</strong></td>
+              <td>Programação</td>
+              <td>6 meses</td>
+              <td class="td-horas">360h</td>
+              <td>Online / Presencial</td>
+              <td>10/04/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">02</td>
+              <td><strong>Python & Inteligência Artificial</strong></td>
+              <td>IA & Dados</td>
+              <td>5 meses</td>
+              <td class="td-horas">300h</td>
+              <td>Online</td>
+              <td>15/04/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">03</td>
+              <td><strong>UX/UI Design</strong></td>
+              <td>Design</td>
+              <td>4 meses</td>
+              <td class="td-horas">240h</td>
+              <td>Online / Presencial</td>
+              <td>22/04/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">04</td>
+              <td><strong>Banco de Dados SQL e NoSQL</strong></td>
+              <td>Dados</td>
+              <td>3 meses</td>
+              <td class="td-horas">180h</td>
+              <td>Online</td>
+              <td>05/05/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">05</td>
+              <td><strong>Cibersegurança e Ethical Hacking</strong></td>
+              <td>Segurança</td>
+              <td>5 meses</td>
+              <td class="td-horas">300h</td>
+              <td>Online</td>
+              <td>12/05/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">06</td>
+              <td><strong>DevOps & Cloud Computing</strong></td>
+              <td>Infraestrutura</td>
+              <td>6 meses</td>
+              <td class="td-horas">360h</td>
+              <td>Online</td>
+              <td>19/05/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">07</td>
+              <td><strong>Data Science & Analytics</strong></td>
+              <td>IA & Dados</td>
+              <td>5 meses</td>
+              <td class="td-horas">300h</td>
+              <td>Online / Presencial</td>
+              <td>02/06/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">08</td>
+              <td><strong>Desenvolvimento Mobile (React Native)</strong></td>
+              <td>Programação</td>
+              <td>4 meses</td>
+              <td class="td-horas">240h</td>
+              <td>Online</td>
+              <td>09/06/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">09</td>
+              <td><strong>Gestão de Projetos Ágeis</strong></td>
+              <td>Gestão</td>
+              <td>3 meses</td>
+              <td class="td-horas">180h</td>
+              <td>Online / Presencial</td>
+              <td>16/06/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">10</td>
+              <td><strong>Automação de Processos com Python</strong></td>
+              <td>Programação</td>
+              <td>2 meses</td>
+              <td class="td-horas">120h</td>
+              <td>Online</td>
+              <td>23/06/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">11</td>
+              <td><strong>E-commerce & Marketing Digital</strong></td>
+              <td>Negócios</td>
+              <td>3 meses</td>
+              <td class="td-horas">180h</td>
+              <td>Online / Presencial</td>
+              <td>07/07/2026</td>
+            </tr>
+            <tr>
+              <td class="td-horas">12</td>
+              <td><strong>Blockchain & Desenvolvimento Web3</strong></td>
+              <td>Inovação</td>
+              <td>4 meses</td>
+              <td class="td-horas">240h</td>
+              <td>Online</td>
+              <td>14/07/2026</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="tr-total">
+              <td colspan="4" align="right">TOTAL GERAL:</td>
+              <td>2.980h</td>
+              <td colspan="2">12 cursos disponíveis</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="legenda-tabela">
+          <span>📅 Datas sujeitas a alteração</span>
+          <span>🎓 Todos incluem certificado digital</span>
+          <span>♿ Conteúdo acessível para leitores de tela</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Inova Tech</h4>
+          <p>Centro de Capacitação Profissional focado em tecnologia e inovação para o mercado de trabalho.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="grade-curricular.html">Grade Curricular</a></li>
+            <li><a href="secretaria.html">Secretaria Virtual</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Metadados da Página</h4>
+          <ul>
+            <li>👤 Autor: Koldri</li>
+            <li>🔄 Atualização: 30s</li>
+            <li>🌐 Charset: UTF-8</li>
+            <li>📱 Responsivo: Sim</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>📧 contato@inovatech.com</li>
+            <li>📱 (11) 9 9999-9999</li>
+            <li>📍 São Paulo, SP</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Inova Tech — Centro de Capacitação Profissional. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
+</body>
+</html>
