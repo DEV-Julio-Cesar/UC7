@@ -1,70 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>São Miguel do Gostoso - RN</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Guia turístico de São Miguel do Gostoso - RN. Praias, gastronomia, cultura e tudo sobre esse paraíso do litoral norte potiguar." />
+  <meta name="author" content="Koldri" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230077B6'/><text y='.9em' font-size='60' x='12' fill='white'>🌊</text></svg>" />
+  <title>São Miguel do Gostoso | Paraíso do RN</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <h1>São Miguel do Gostoso</h1>
-        <p><em>Rio Grande do Norte - Brasil</em></p>
-    </header>
 
-    <nav>
+  <header>
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="São Miguel do Gostoso - Início">
+        <div class="logo-icon" aria-hidden="true">🌊</div>
+        <div class="logo-text">
+          <strong>São Miguel do Gostoso</strong>
+          <span>Rio Grande do Norte</span>
+        </div>
+      </a>
+      <nav aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html">Gastronomia</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="../index.html">← UC7</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="hero-badge">🌴 Litoral Norte do RN</p>
+        <h1 id="hero-title">São Miguel do <span>Gostoso</span></h1>
+        <p>Ventos perfeitos, praias paradisíacas e a hospitalidade mais calorosa do Nordeste. Bem-vindo ao paraíso dos kitesurfistas.</p>
+        <div class="hero-actions">
+          <a href="pontos-turisticos.html" class="btn btn-primary">🏖 Explorar Praias</a>
+          <a href="gastronomia.html" class="btn btn-ghost">🍽 Ver Gastronomia</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F8FF"/>
+      </svg>
+    </div>
+
+    <section class="stats-bar" aria-label="Números da cidade">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <strong>27<span>°C</span></strong>
+            <p>Temperatura média</p>
+          </div>
+          <div class="stat-item">
+            <strong>10<span>mil</span></strong>
+            <p>Habitantes</p>
+          </div>
+          <div class="stat-item">
+            <strong>300<span>dias</span></strong>
+            <p>De sol por ano</p>
+          </div>
+          <div class="stat-item">
+            <strong>1992<span></span></strong>
+            <p>Ano de emancipação</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container main-with-aside" style="padding: 3rem 1.5rem;">
+
+      <div>
+        <section aria-labelledby="historia-title" style="margin-bottom:3rem;">
+          <span class="tag">📖 Nossa História</span>
+          <h2 class="section-title" id="historia-title">Uma vila que virou <span>paraíso</span></h2>
+          <p class="section-subtitle">Da pesca artesanal ao destino internacional de kitesurf.</p>
+
+          <div class="info-box">
+            <p>São Miguel do Gostoso é um município localizado no litoral norte do <strong>Rio Grande do Norte</strong>. O nome peculiar tem origem em uma lenda sobre um pescador chamado Miguel, famoso pela simpatia e pelo delicioso peixe que pescava.</p>
+          </div>
+          <div class="info-box" style="border-left-color: var(--sand);">
+            <p>A cidade foi emancipada em <strong>1992</strong>, desmembrando-se de Touros. Nas últimas décadas transformou-se em um dos destinos mais procurados do Nordeste, especialmente por praticantes de <strong>kitesurf</strong> e <strong>windsurf</strong>.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="atracoes-title">
+          <span class="tag">⭐ Atrações</span>
+          <h2 class="section-title" id="atracoes-title">O que fazer aqui</h2>
+          <p class="section-subtitle">Aventura, natureza e descanso em um só lugar.</p>
+          <div class="cards-grid">
+            <article class="card">
+              <div class="card-body">
+                <h3>🪁 Kitesurf & Windsurf</h3>
+                <p>Ventos constantes durante todo o ano fazem de Gostoso a capital nordestina dos esportes de vento.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-body">
+                <h3>🌅 Pôr do Sol</h3>
+                <p>Considerado um dos mais bonitos do Brasil. O espetáculo acontece todos os dias na praia principal.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-body">
+                <h3>🐬 Golfinhos</h3>
+                <p>O Mirante dos Golfinhos oferece avistamentos frequentes, especialmente ao amanhecer.</p>
+              </div>
+            </article>
+          </div>
+          <p style="margin-top:1.5rem;">
+            <a href="pontos-turisticos.html" class="btn btn-primary">Ver todos os pontos turísticos →</a>
+          </p>
+        </section>
+
+        <section aria-labelledby="cidades-title" style="margin-top:3rem;">
+          <span class="tag">🗺 Região</span>
+          <h2 class="section-title" id="cidades-title">Cidades próximas</h2>
+          <div class="info-box">
+            <ol>
+              <li><strong>Touros</strong> — 25 km (Marco Zero da BR-101)</li>
+              <li><strong>Maxaranguape</strong> — 45 km</li>
+              <li><strong>Rio do Fogo</strong> — 50 km</li>
+              <li><strong>Galinhos</strong> — 60 km (acesso por balsa)</li>
+              <li><strong>Natal</strong> — 100 km (capital do estado)</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <aside aria-label="Informações rápidas">
+        <h3>📋 Informações Úteis</h3>
         <ul>
-            <li><a href="#historia">História</a></li>
+          <li>🌡 Clima tropical 27°C</li>
+          <li>📅 Melhor época: Set–Mar</li>
+          <li>✈ Aeroporto: Natal (100km)</li>
+          <li>🏨 +50 pousadas</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;">🔗 Páginas</h3>
+        <ul>
+          <li><a href="pontos-turisticos.html" style="color:rgba(255,255,255,0.8);">📍 Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html"       style="color:rgba(255,255,255,0.8);">🍽 Gastronomia</a></li>
+          <li><a href="cultura.html"           style="color:rgba(255,255,255,0.8);">🎵 Cultura e Música</a></li>
+        </ul>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>São Miguel do Gostoso</h4>
+          <p>Guia turístico oficial da cidade mais gostosa do Rio Grande do Norte.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
             <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
             <li><a href="gastronomia.html">Gastronomia</a></li>
-            <li><a href="cultura.html">Cultura e Música</a></li>
-            <li><a href="#cidades">Cidades Próximas</a></li>
-        </ul>
-    </nav>
+            <li><a href="cultura.html">Cultura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <ul>
+            <li>📍 Litoral Norte — RN</li>
+            <li>✈ 100km de Natal</li>
+            <li>🌐 Brasil — Nordeste</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projeto</h4>
+          <ul>
+            <li>👤 Autor: Koldri</li>
+            <li>📚 UC7 — Dev Web</li>
+            <li><a href="../index.html">← Voltar ao UC7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Guia Turístico — São Miguel do Gostoso, RN. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-    <main>
-        <section id="historia">
-            <h2>História</h2>
-            <p>São Miguel do Gostoso é um município brasileiro localizado no litoral norte do estado do <strong>Rio Grande do Norte</strong>. O nome peculiar da cidade tem origem em uma lenda local sobre um pescador chamado Miguel, conhecido por sua simpatia e pelo delicioso peixe que pescava.</p>
-            
-            <p>A cidade foi emancipada politicamente em <strong>1992</strong>, desmembrando-se do município de Touros. Antes disso, era uma pequena vila de pescadores que vivia principalmente da pesca artesanal e da agricultura de subsistência.</p>
-            
-            <p>Nas últimas décadas, São Miguel do Gostoso se transformou em um dos destinos turísticos mais procurados do Nordeste brasileiro, especialmente por praticantes de <strong>kitesurf</strong> e <strong>windsurf</strong>, devido aos ventos constantes e às belas praias.</p>
-        </section>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
 
-        <section id="atracoes">
-            <h2>Principais Atrações</h2>
-            <ul>
-                <li><strong>Kitesurf e Windsurf</strong> - Ventos constantes durante todo o ano</li>
-                <li><strong>Praias paradisíacas</strong> - Águas cristalinas e areias brancas</li>
-                <li><strong>Pôr do sol</strong> - Considerado um dos mais bonitos do Brasil</li>
-                <li><strong>Passeios de buggy</strong> - Explorando dunas e praias desertas</li>
-                <li><strong>Mergulho</strong> - Piscinas naturais com rica vida marinha</li>
-            </ul>
-            <p><a href="pontos-turisticos.html">Conheça os pontos turísticos em detalhes →</a></p>
-        </section>
-
-        <section id="cidades">
-            <h2>Cidades Próximas</h2>
-            <ol>
-                <li><strong>Touros</strong> - 25 km (famosa pelo Marco Zero da BR-101)</li>
-                <li><strong>Maxaranguape</strong> - 45 km</li>
-                <li><strong>Rio do Fogo</strong> - 50 km</li>
-                <li><strong>Natal</strong> - 100 km (capital do estado)</li>
-                <li><strong>Galinhos</strong> - 60 km (acesso por balsa)</li>
-            </ol>
-        </section>
-
-        <section id="info">
-            <h2>Informações Úteis</h2>
-            <p><strong>Melhor época para visitar:</strong> Setembro a março (ventos mais fortes para esportes aquáticos)</p>
-            <p><strong>População:</strong> Aproximadamente 10.000 habitantes</p>
-            <p><strong>Clima:</strong> Tropical, com temperatura média de 27°C</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 - Guia Turístico de São Miguel do Gostoso</p>
-        <p><a href="#top">Voltar ao topo</a></p>
-    </footer>
 </body>
 </html>

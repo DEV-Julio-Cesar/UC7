@@ -1,90 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pontos Turísticos - São Miguel do Gostoso</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pontos turísticos de São Miguel do Gostoso - RN. Praias, farol, mirante dos golfinhos, dunas e muito mais." />
+  <meta name="author" content="Koldri" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230077B6'/><text y='.9em' font-size='60' x='12' fill='white'>🌊</text></svg>" />
+  <title>Pontos Turísticos | São Miguel do Gostoso</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <h1>Pontos Turísticos</h1>
-        <p><a href="index.html">← Voltar para página inicial</a></p>
-    </header>
 
-    <main>
-        <section>
-            <h2>Praias Imperdíveis</h2>
-            
-            <article>
-                <h3>1. Praia de São Miguel do Gostoso</h3>
-                <p>A praia principal da cidade, localizada no centro. Ideal para banho, com águas calmas e mornas. É aqui que acontece a vida noturna e onde estão concentrados os principais restaurantes e pousadas.</p>
-                <ul>
-                    <li>Infraestrutura completa</li>
-                    <li>Ótima para famílias</li>
-                    <li>Pôr do sol espetacular</li>
-                </ul>
-            </article>
+  <header>
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="São Miguel do Gostoso - Início">
+        <div class="logo-icon" aria-hidden="true">🌊</div>
+        <div class="logo-text">
+          <strong>São Miguel do Gostoso</strong>
+          <span>Rio Grande do Norte</span>
+        </div>
+      </a>
+      <nav aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pontos-turisticos.html" class="active" aria-current="page">Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html">Gastronomia</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="../index.html">← UC7</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <article>
-                <h3>2. Praia do Maceió</h3>
-                <p>Considerada uma das mais belas praias do Rio Grande do Norte. Localizada a cerca de 3 km do centro, possui piscinas naturais na maré baixa e é perfeita para a prática de kitesurf.</p>
-                <ul>
-                    <li>Piscinas naturais</li>
-                    <li>Ideal para kitesurf</li>
-                    <li>Menos movimentada</li>
-                </ul>
-            </article>
+  <main>
 
-            <article>
-                <h3>3. Praia de Tourinhos</h3>
-                <p>Praia selvagem e praticamente deserta, acessível por buggy ou caminhada. Perfeita para quem busca tranquilidade e contato com a natureza.</p>
-                <ul>
-                    <li>Praia deserta</li>
-                    <li>Natureza preservada</li>
-                    <li>Acesso por buggy</li>
-                </ul>
-            </article>
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <div class="page-hero-icon" aria-hidden="true">📍</div>
+        <h1 id="page-title">Pontos Turísticos</h1>
+        <p>Praias, farol, golfinhos e dunas — descubra as maravilhas de Gostoso.</p>
+      </div>
+    </section>
 
-            <article>
-                <h3>4. Praia do Marco</h3>
-                <p>Localizada próxima ao farol, é uma praia tranquila com formações rochosas interessantes. Ótima para caminhadas e fotografia.</p>
-            </article>
-        </section>
+    <section class="section" aria-labelledby="praias-title">
+      <div class="container">
+        <span class="tag">🏖 Praias</span>
+        <h2 class="section-title" id="praias-title">Praias <span>Imperdíveis</span></h2>
+        <p class="section-subtitle">Cada praia tem sua personalidade. Escolha a sua favorita.</p>
 
-        <section>
-            <h2>Outros Pontos de Interesse</h2>
-            
-            <article>
-                <h3>Farol de São Miguel do Gostoso</h3>
-                <p>Cartão postal da cidade, o farol oferece uma vista panorâmica incrível do litoral. É um dos melhores lugares para apreciar o pôr do sol.</p>
-            </article>
+        <div class="cards-grid">
 
-            <article>
-                <h3>Mirante dos Golfinhos</h3>
-                <p>Local privilegiado para observar golfinhos em seu habitat natural, especialmente durante o início da manhã.</p>
-            </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>🏖 Praia Principal</h3>
+              <p>A praia do centro da cidade. Ideal para banho, com águas calmas e mornas. Aqui estão os principais restaurantes, pousadas e a vida noturna.</p>
+            </div>
+            <ul class="card-list">
+              <li>Infraestrutura completa</li>
+              <li>Ótima para famílias</li>
+              <li>Pôr do sol espetacular</li>
+            </ul>
+          </article>
 
-            <article>
-                <h3>Dunas e Lagoas</h3>
-                <p>Passeios de buggy levam às dunas e lagoas da região, proporcionando aventura e paisagens deslumbrantes.</p>
-            </article>
-        </section>
+          <article class="card">
+            <div class="card-body">
+              <h3>🪁 Praia do Maceió</h3>
+              <p>Uma das mais belas do RN. A 3 km do centro, possui piscinas naturais na maré baixa e é perfeita para kitesurf.</p>
+            </div>
+            <ul class="card-list">
+              <li>Piscinas naturais</li>
+              <li>Ideal para kitesurf</li>
+              <li>Menos movimentada</li>
+            </ul>
+          </article>
 
-        <section>
-            <h2>Atividades Recomendadas</h2>
-            <ol>
-                <li>Aulas de kitesurf e windsurf</li>
-                <li>Passeio de buggy pelas praias</li>
-                <li>Mergulho nas piscinas naturais</li>
-                <li>Observação de golfinhos</li>
-                <li>Stand-up paddle</li>
-                <li>Passeio de barco</li>
-            </ol>
-        </section>
-    </main>
+          <article class="card">
+            <div class="card-body">
+              <h3>🌿 Praia de Tourinhos</h3>
+              <p>Praia selvagem e praticamente deserta, acessível por buggy ou caminhada. Perfeita para quem busca tranquilidade.</p>
+            </div>
+            <ul class="card-list">
+              <li>Praia deserta</li>
+              <li>Natureza preservada</li>
+              <li>Acesso por buggy</li>
+            </ul>
+          </article>
 
-    <footer>
-        <p><a href="index.html">Página Inicial</a> | <a href="gastronomia.html">Gastronomia</a> | <a href="cultura.html">Cultura</a></p>
-    </footer>
+          <article class="card">
+            <div class="card-body">
+              <h3>🪨 Praia do Marco</h3>
+              <p>Próxima ao farol, com formações rochosas interessantes. Ótima para caminhadas e fotografia ao entardecer.</p>
+            </div>
+            <ul class="card-list">
+              <li>Formações rochosas</li>
+              <li>Vista para o farol</li>
+              <li>Ótima para fotos</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="outros-title">
+      <div class="container">
+        <span class="tag">🗺 Atrações</span>
+        <h2 class="section-title" id="outros-title">Outros Pontos de <span>Interesse</span></h2>
+        <p class="section-subtitle">Além das praias, a cidade guarda outras surpresas.</p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-body">
+              <h3>🗼 Farol de Gostoso</h3>
+              <p>Cartão postal da cidade. Oferece vista panorâmica incrível do litoral e é um dos melhores lugares para o pôr do sol.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>🐬 Mirante dos Golfinhos</h3>
+              <p>Local privilegiado para observar golfinhos em habitat natural, especialmente durante o início da manhã.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>🏜 Dunas e Lagoas</h3>
+              <p>Passeios de buggy levam às dunas e lagoas da região, proporcionando aventura e paisagens deslumbrantes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="atividades-title">
+      <div class="container">
+        <span class="tag">🎯 Atividades</span>
+        <h2 class="section-title" id="atividades-title">O que <span>fazer</span></h2>
+        <div class="info-box">
+          <ol>
+            <li>Aulas de kitesurf e windsurf</li>
+            <li>Passeio de buggy pelas praias</li>
+            <li>Mergulho nas piscinas naturais</li>
+            <li>Observação de golfinhos ao amanhecer</li>
+            <li>Stand-up paddle nas águas calmas</li>
+            <li>Passeio de barco pelo litoral</li>
+          </ol>
+        </div>
+
+        <div class="highlight">
+          <h3>🌅 Dica de Ouro</h3>
+          <p>Chegue à Praia do Marco 30 minutos antes do pôr do sol para garantir o melhor ângulo para fotos. O espetáculo dura cerca de 20 minutos e é inesquecível.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>São Miguel do Gostoso</h4>
+          <p>Guia turístico do paraíso do litoral norte potiguar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+            <li><a href="gastronomia.html">Gastronomia</a></li>
+            <li><a href="cultura.html">Cultura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <ul>
+            <li>📍 Litoral Norte — RN</li>
+            <li>✈ 100km de Natal</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projeto</h4>
+          <ul>
+            <li>👤 Autor: Koldri</li>
+            <li>📚 UC7 — Dev Web</li>
+            <li><a href="../index.html">← Voltar ao UC7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Guia Turístico — São Miguel do Gostoso, RN.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
 </body>
 </html>
