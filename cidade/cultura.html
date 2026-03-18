@@ -1,113 +1,300 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultura e Música - São Miguel do Gostoso</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cultura e música de São Miguel do Gostoso - forró, festas tradicionais, artesanato e a rica herança cultural do litoral potiguar." />
+  <meta name="author" content="Koldri" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230077B6'/><text y='.9em' font-size='60' x='12' fill='white'>🎵</text></svg>" />
+  <title>Cultura e Música | São Miguel do Gostoso</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .culture-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow);
+      border-top: 4px solid var(--ocean);
+      transition: var(--transition);
+    }
+    .culture-card:nth-child(2) { border-top-color: var(--sand-dk); }
+    .culture-card:nth-child(3) { border-top-color: var(--green-lt); }
+    .culture-card:nth-child(4) { border-top-color: var(--ocean-lt); }
+    .culture-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .culture-card .icon { font-size: 2.2rem; margin-bottom: 0.75rem; display: block; }
+    .culture-card h3 { font-size: 1rem; font-weight: 700; color: var(--ocean-dk); margin-bottom: 0.5rem; }
+    .culture-card p  { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+    .culture-card ul { padding-left: 1.1rem; list-style: disc; margin-top: 0.5rem; }
+    .culture-card ul li { font-size: 0.85rem; color: var(--text); padding: 0.2rem 0; }
+
+    .rhythm-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: linear-gradient(135deg, var(--sand), var(--sand-dk));
+      color: var(--white); font-size: 0.78rem; font-weight: 700;
+      padding: 0.3rem 1rem; border-radius: 50px; margin: 0.25rem;
+    }
+    .artists-list li {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 0; border-bottom: 1px solid var(--light);
+      font-size: 0.9rem;
+    }
+    .artists-list li:last-child { border-bottom: none; }
+    .artists-list li .artist-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--ocean-lt), var(--ocean));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Cultura e Música</h1>
-        <p><a href="index.html">← Voltar para página inicial</a></p>
-    </header>
 
-    <main>
-        <section>
-            <h2>Manifestações Culturais</h2>
-            
-            <article>
-                <h3>Festas Tradicionais</h3>
-                <ul>
-                    <li><strong>Festa de São Miguel Arcanjo</strong> - Padroeiro da cidade, celebrado em 29 de setembro</li>
-                    <li><strong>Carnaval</strong> - Celebração com trios elétricos e blocos de rua</li>
-                    <li><strong>Festa de São João</strong> - Tradicional festa junina nordestina</li>
-                    <li><strong>Réveillon</strong> - Virada de ano na praia com shows e queima de fogos</li>
-                </ul>
-            </article>
+  <header>
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="São Miguel do Gostoso - Início">
+        <div class="logo-icon" aria-hidden="true">🌊</div>
+        <div class="logo-text">
+          <strong>São Miguel do Gostoso</strong>
+          <span>Rio Grande do Norte</span>
+        </div>
+      </a>
+      <nav aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html">Gastronomia</a></li>
+          <li><a href="cultura.html" class="active" aria-current="page">Cultura</a></li>
+          <li><a href="../index.html">← UC7</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <article>
-                <h3>Artesanato Local</h3>
-                <p>O artesanato da região reflete a cultura pesqueira e praiana:</p>
-                <ul>
-                    <li>Peças em madeira de jangadas</li>
-                    <li>Redes de pesca decorativas</li>
-                    <li>Bijuterias com conchas e búzios</li>
-                    <li>Bordados e rendas</li>
-                    <li>Esculturas em coco</li>
-                </ul>
+  <main>
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-hero-icon" aria-hidden="true">🎵</p>
+        <h1 id="page-title">Cultura e <span style="color:var(--sand);">Música</span></h1>
+        <p>Forró, artesanato, festas tradicionais e a hospitalidade que só o Nordeste tem.</p>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F8FF"/>
+      </svg>
+    </div>
+
+    <div class="container main-with-aside" style="padding: 3rem 1.5rem;">
+
+      <div>
+
+        <!-- Festas Tradicionais -->
+        <section aria-labelledby="festas-title" style="margin-bottom:3rem;">
+          <span class="tag">🎉 Calendário</span>
+          <h2 class="section-title" id="festas-title">Festas <span>Tradicionais</span></h2>
+          <p class="section-subtitle">O ano inteiro tem motivo para celebrar em Gostoso.</p>
+          <div class="cards-grid">
+            <article class="culture-card">
+              <span class="icon">⛪</span>
+              <h3>Festa de São Miguel Arcanjo</h3>
+              <p>Celebração do padroeiro da cidade em 29 de setembro. Missas, procissão, shows e muita festa popular.</p>
             </article>
+            <article class="culture-card">
+              <span class="icon">🎭</span>
+              <h3>Carnaval</h3>
+              <p>Trios elétricos, blocos de rua e muito forró. O carnaval de Gostoso mistura tradição e alegria nordestina.</p>
+            </article>
+            <article class="culture-card">
+              <span class="icon">🌽</span>
+              <h3>Festa de São João</h3>
+              <p>A maior festa junina do calendário local. Quadrilhas, forró pé de serra, comidas típicas e fogueiras.</p>
+            </article>
+            <article class="culture-card">
+              <span class="icon">🎆</span>
+              <h3>Réveillon na Praia</h3>
+              <p>Virada de ano com os pés na areia, shows ao vivo e queima de fogos sobre o oceano. Inesquecível.</p>
+            </article>
+          </div>
         </section>
 
-        <section>
-            <h2>Música Regional</h2>
-            
-            <article>
-                <h3>Ritmos Nordestinos</h3>
-                <p>A música em São Miguel do Gostoso é marcada pelos ritmos tradicionais do Nordeste:</p>
-                
-                <h4>Forró</h4>
-                <p>O <strong>forró</strong> é o ritmo mais popular, presente em festas e celebrações. Tocado com sanfona, zabumba e triângulo, embala as noites na cidade.</p>
-                <ul>
-                    <li>Forró pé de serra (tradicional)</li>
-                    <li>Forró eletrônico (moderno)</li>
-                    <li>Xote e baião</li>
-                </ul>
+        <!-- Música -->
+        <section aria-labelledby="musica-title" style="margin-bottom:3rem;">
+          <span class="tag">🎸 Ritmos</span>
+          <h2 class="section-title" id="musica-title">Música <span>Regional</span></h2>
+          <p class="section-subtitle">Os ritmos que embalam as noites e as festas do litoral potiguar.</p>
 
-                <h4>Outros Ritmos</h4>
-                <ul>
-                    <li><strong>Coco</strong> - Dança de roda com palmas e ganzá</li>
-                    <li><strong>Maracatu</strong> - Ritmo afro-brasileiro</li>
-                    <li><strong>Ciranda</strong> - Dança de roda típica do litoral</li>
-                    <li><strong>Embolada</strong> - Desafio poético cantado</li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>Artistas e Bandas Populares</h3>
-                <p>Alguns artistas que representam a música nordestina:</p>
-                <ul>
-                    <li>Luiz Gonzaga - "Rei do Baião"</li>
-                    <li>Dominguinhos - Sanfoneiro e compositor</li>
-                    <li>Elba Ramalho - Cantora potiguar</li>
-                    <li>Falamansa - Forró contemporâneo</li>
-                    <li>Aviões do Forró - Forró eletrônico</li>
-                </ul>
-            </article>
-        </section>
-
-        <section>
-            <h2>Vida Noturna</h2>
-            <p>A cidade oferece opções de entretenimento noturno:</p>
+          <div class="info-box" style="margin-bottom:1.5rem;">
+            <h3>🪗 Forró — O Ritmo da Alma</h3>
+            <p>O forró é o ritmo mais popular, presente em festas e celebrações. Tocado com sanfona, zabumba e triângulo, embala as noites na cidade. Existem duas vertentes principais:</p>
             <ul>
-                <li><strong>Bares à beira-mar</strong> - Música ao vivo e drinks</li>
-                <li><strong>Forró na praça</strong> - Apresentações gratuitas em datas especiais</li>
-                <li><strong>Restaurantes com música</strong> - Jantares com apresentações musicais</li>
-                <li><strong>Festas temáticas</strong> - Eventos especiais em pousadas e hotéis</li>
+              <li><strong>Forró pé de serra</strong> — tradicional, raiz, com Luiz Gonzaga como maior referência</li>
+              <li><strong>Forró eletrônico</strong> — moderno, com bandas contemporâneas e muito público jovem</li>
             </ul>
+          </div>
+
+          <p style="margin-bottom:1rem; font-weight:600; color:var(--ocean-dk);">Outros ritmos presentes na cidade:</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem;">
+            <span class="rhythm-badge">🥁 Coco</span>
+            <span class="rhythm-badge">🎺 Maracatu</span>
+            <span class="rhythm-badge">💃 Ciranda</span>
+            <span class="rhythm-badge">🎤 Embolada</span>
+            <span class="rhythm-badge">🎵 Xote</span>
+            <span class="rhythm-badge">🎶 Baião</span>
+          </div>
+
+          <div class="info-box" style="border-left-color: var(--sand);">
+            <h3>🎤 Artistas que Representam o Nordeste</h3>
+            <ul class="artists-list">
+              <li>
+                <div class="artist-icon">🎸</div>
+                <div><strong>Luiz Gonzaga</strong> — "Rei do Baião", maior ícone da música nordestina</div>
+              </li>
+              <li>
+                <div class="artist-icon">🪗</div>
+                <div><strong>Dominguinhos</strong> — Sanfoneiro e compositor pernambucano</div>
+              </li>
+              <li>
+                <div class="artist-icon">🎤</div>
+                <div><strong>Elba Ramalho</strong> — Cantora potiguar, voz do Nordeste</div>
+              </li>
+              <li>
+                <div class="artist-icon">🎵</div>
+                <div><strong>Falamansa</strong> — Forró contemporâneo com raízes tradicionais</div>
+              </li>
+              <li>
+                <div class="artist-icon">🎶</div>
+                <div><strong>Aviões do Forró</strong> — Forró eletrônico de grande sucesso nacional</div>
+              </li>
+            </ul>
+          </div>
         </section>
 
-        <section>
-            <h2>Tradições Locais</h2>
-            <article>
-                <h3>Cultura Pesqueira</h3>
-                <p>A tradição pesqueira ainda é forte na comunidade:</p>
-                <ul>
-                    <li>Saída das jangadas ao amanhecer</li>
-                    <li>Chegada dos pescadores com o pescado do dia</li>
-                    <li>Construção artesanal de jangadas</li>
-                    <li>Técnicas de pesca tradicionais</li>
-                </ul>
+        <!-- Artesanato -->
+        <section aria-labelledby="artesanato-title" style="margin-bottom:3rem;">
+          <span class="tag">🎨 Artesanato</span>
+          <h2 class="section-title" id="artesanato-title">Arte <span>Local</span></h2>
+          <p class="section-subtitle">Peças únicas que carregam a identidade pesqueira e praiana da cidade.</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <h3>⛵ Madeira de Jangada</h3>
+              <p>Esculturas e peças decorativas feitas com madeira de jangadas antigas. Arte que conta a história da pesca local.</p>
             </article>
-
-            <article>
-                <h3>Hospitalidade Nordestina</h3>
-                <p>Os moradores de São Miguel do Gostoso são conhecidos pela <strong>hospitalidade calorosa</strong>, sempre prontos para receber visitantes com um sorriso e uma boa conversa.</p>
+            <article class="food-card">
+              <h3>🐚 Bijuterias do Mar</h3>
+              <p>Colares, pulseiras e brincos feitos com conchas, búzios e pedras naturais coletadas na praia.</p>
             </article>
+            <article class="food-card">
+              <h3>🧵 Rendas e Bordados</h3>
+              <p>Tradição centenária das rendeiras nordestinas. Peças delicadas feitas à mão com técnicas passadas de geração em geração.</p>
+            </article>
+            <article class="food-card">
+              <h3>🥥 Esculturas em Coco</h3>
+              <p>Artesanato criativo usando o coco seco como matéria-prima. Tigelas, porta-retratos e peças decorativas únicas.</p>
+            </article>
+          </div>
         </section>
-    </main>
 
-    <footer>
-        <p><a href="index.html">Página Inicial</a> | <a href="pontos-turisticos.html">Pontos Turísticos</a> | <a href="gastronomia.html">Gastronomia</a></p>
-    </footer>
+        <!-- Tradições -->
+        <section aria-labelledby="tradicoes-title">
+          <span class="tag">⚓ Tradições</span>
+          <h2 class="section-title" id="tradicoes-title">Vida e <span>Tradições</span></h2>
+          <p class="section-subtitle">A cultura pesqueira que moldou a identidade de Gostoso.</p>
+          <div class="info-box">
+            <h3>🎣 Cultura Pesqueira</h3>
+            <ul>
+              <li>Saída das jangadas ao amanhecer — espetáculo diário na praia</li>
+              <li>Chegada dos pescadores com o pescado fresco do dia</li>
+              <li>Construção artesanal de jangadas — técnica passada de pai para filho</li>
+              <li>Técnicas de pesca tradicionais preservadas pela comunidade</li>
+            </ul>
+          </div>
+          <div class="highlight">
+            <h3>🤝 Hospitalidade Nordestina</h3>
+            <p>Os moradores de São Miguel do Gostoso são conhecidos pela hospitalidade calorosa. Sempre prontos para receber visitantes com um sorriso, uma boa conversa e um copo de água de coco gelada.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside aria-label="Vida noturna e dicas culturais">
+        <h3>🌙 Vida Noturna</h3>
+        <ul>
+          <li>🎸 Bares com música ao vivo</li>
+          <li>💃 Forró na praça</li>
+          <li>🍽 Jantares com shows</li>
+          <li>🎉 Festas em pousadas</li>
+          <li>🌊 Sunset na beira-mar</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;">📅 Próximos Eventos</h3>
+        <ul>
+          <li>🌽 Jun — São João</li>
+          <li>⛪ Set — Padroeiro</li>
+          <li>🎆 Dez — Réveillon</li>
+          <li>🎭 Fev — Carnaval</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;">🔗 Navegação</h3>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.8);">🏠 Home</a></li>
+          <li><a href="pontos-turisticos.html" style="color:rgba(255,255,255,0.8);">📍 Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html" style="color:rgba(255,255,255,0.8);">🍽 Gastronomia</a></li>
+        </ul>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>São Miguel do Gostoso</h4>
+          <p>Guia turístico oficial da cidade mais gostosa do Rio Grande do Norte.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+            <li><a href="gastronomia.html">Gastronomia</a></li>
+            <li><a href="cultura.html">Cultura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <ul>
+            <li>📍 Litoral Norte — RN</li>
+            <li>✈ 100km de Natal</li>
+            <li>🌐 Brasil — Nordeste</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projeto</h4>
+          <ul>
+            <li>👤 Autor: Koldri</li>
+            <li>📚 UC7 — Dev Web</li>
+            <li><a href="../index.html">← Voltar ao UC7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Guia Turístico — São Miguel do Gostoso, RN. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
 </body>
 </html>

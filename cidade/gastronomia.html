@@ -1,84 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gastronomia - São Miguel do Gostoso</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gastronomia de São Miguel do Gostoso - frutos do mar frescos, pratos nordestinos e sabores únicos do litoral potiguar." />
+  <meta name="author" content="Koldri" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230077B6'/><text y='.9em' font-size='60' x='12' fill='white'>🍽</text></svg>" />
+  <title>Gastronomia | São Miguel do Gostoso</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .food-card .emoji { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .food-card .price-tag {
+      display: inline-block; background: var(--green-lt); color: var(--white);
+      font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.7rem;
+      border-radius: 50px; margin-top: 0.5rem;
+    }
+    .tip-box {
+      background: linear-gradient(135deg, var(--green), var(--green-lt));
+      color: var(--white); border-radius: var(--radius-lg);
+      padding: 1.75rem; margin: 2rem 0;
+    }
+    .tip-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .tip-box p  { font-size: 0.9rem; opacity: 0.9; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Gastronomia Regional</h1>
-        <p><a href="index.html">← Voltar para página inicial</a></p>
-    </header>
 
-    <main>
-        <section>
-            <h2>Comidas Típicas</h2>
-            <p>A culinária de São Miguel do Gostoso é fortemente influenciada pela <strong>cultura pesqueira</strong> e pelos ingredientes típicos do Nordeste brasileiro.</p>
+  <header>
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="São Miguel do Gostoso - Início">
+        <div class="logo-icon" aria-hidden="true">🌊</div>
+        <div class="logo-text">
+          <strong>São Miguel do Gostoso</strong>
+          <span>Rio Grande do Norte</span>
+        </div>
+      </a>
+      <nav aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+          <li><a href="gastronomia.html" class="active" aria-current="page">Gastronomia</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="../index.html">← UC7</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <article>
-                <h3>Pratos com Frutos do Mar</h3>
-                <ul>
-                    <li><strong>Peixada Gostosense</strong> - Peixe fresco cozido com legumes e temperos regionais</li>
-                    <li><strong>Lagosta grelhada</strong> - Especialidade local, servida com manteiga de garrafa</li>
-                    <li><strong>Camarão na moranga</strong> - Camarões preparados dentro de uma abóbora</li>
-                    <li><strong>Moqueca de peixe</strong> - Tradicional ensopado com leite de coco</li>
-                    <li><strong>Casquinha de caranguejo</strong> - Aperitivo popular nos restaurantes à beira-mar</li>
-                </ul>
+  <main>
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-hero-icon" aria-hidden="true">🍽</p>
+        <h1 id="page-title">Gastronomia <span style="color:var(--sand);">Regional</span></h1>
+        <p>Frutos do mar frescos, sabores nordestinos e receitas que contam a história do litoral potiguar.</p>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F8FF"/>
+      </svg>
+    </div>
+
+    <div class="container main-with-aside" style="padding: 3rem 1.5rem;">
+
+      <div>
+
+        <!-- Frutos do Mar -->
+        <section aria-labelledby="mar-title" style="margin-bottom:3rem;">
+          <span class="tag">🦞 Especialidades</span>
+          <h2 class="section-title" id="mar-title">Frutos do <span>Mar</span></h2>
+          <p class="section-subtitle">Pescado fresco todos os dias, direto do oceano para a sua mesa.</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <span class="emoji">🐟</span>
+              <h3>Peixada Gostosense</h3>
+              <p>Peixe fresco cozido com legumes, coentro e temperos regionais. O prato símbolo da cidade.</p>
+              <ul>
+                <li>Peixe do dia</li>
+                <li>Batata, cenoura e chuchu</li>
+                <li>Molho de tomate caseiro</li>
+              </ul>
+              <span class="price-tag">⭐ Prato típico</span>
             </article>
-
-            <article>
-                <h3>Pratos Típicos Nordestinos</h3>
-                <ul>
-                    <li><strong>Carne de sol com macaxeira</strong> - Carne seca acompanhada de mandioca cozida</li>
-                    <li><strong>Baião de dois</strong> - Arroz com feijão verde, queijo coalho e carne seca</li>
-                    <li><strong>Tapioca</strong> - Crepe de goma de tapioca com diversos recheios</li>
-                    <li><strong>Cuscuz nordestino</strong> - Feito com flocos de milho</li>
-                    <li><strong>Macaxeira frita</strong> - Acompanhamento tradicional</li>
-                </ul>
+            <article class="food-card">
+              <span class="emoji">🦞</span>
+              <h3>Lagosta Grelhada</h3>
+              <p>Especialidade local servida com manteiga de garrafa e farofa. Experiência gastronômica única.</p>
+              <ul>
+                <li>Lagosta fresca da costa</li>
+                <li>Manteiga de garrafa</li>
+                <li>Farofa de dendê</li>
+              </ul>
+              <span class="price-tag">🏆 Premium</span>
             </article>
-
-            <article>
-                <h3>Bebidas Regionais</h3>
-                <ul>
-                    <li><strong>Cajuína</strong> - Suco clarificado de caju</li>
-                    <li><strong>Água de coco</strong> - Servida gelada direto do coco</li>
-                    <li><strong>Caipirinha de frutas regionais</strong> - Com cajá, umbu ou maracujá</li>
-                    <li><strong>Cachaça artesanal</strong> - Produzida na região</li>
-                </ul>
+            <article class="food-card">
+              <span class="emoji">🍲</span>
+              <h3>Moqueca de Peixe</h3>
+              <p>Ensopado tradicional com leite de coco, azeite de dendê e pimentões coloridos.</p>
+              <ul>
+                <li>Peixe branco firme</li>
+                <li>Leite de coco fresco</li>
+                <li>Pimentões e coentro</li>
+              </ul>
+              <span class="price-tag">❤ Favorito</span>
             </article>
-
-            <article>
-                <h3>Sobremesas</h3>
-                <ul>
-                    <li><strong>Cartola</strong> - Banana frita com queijo coalho e canela</li>
-                    <li><strong>Cocada</strong> - Doce de coco tradicional</li>
-                    <li><strong>Bolo de rolo</strong> - Massa fina enrolada com goiabada</li>
-                    <li><strong>Doce de caju</strong> - Feito com a fruta típica da região</li>
-                    <li><strong>Tapioca doce</strong> - Com coco, leite condensado ou chocolate</li>
-                </ul>
+            <article class="food-card">
+              <span class="emoji">🦐</span>
+              <h3>Camarão na Moranga</h3>
+              <p>Camarões frescos preparados dentro de uma abóbora, com creme de queijo e catupiry.</p>
+              <ul>
+                <li>Camarão VG fresco</li>
+                <li>Abóbora moranga</li>
+                <li>Requeijão cremoso</li>
+              </ul>
+              <span class="price-tag">🌟 Especial</span>
             </article>
+          </div>
         </section>
 
-        <section>
-            <h2>Onde Comer</h2>
-            <p>A cidade oferece diversas opções gastronômicas:</p>
-            <ul>
-                <li><strong>Restaurantes à beira-mar</strong> - Frutos do mar frescos com vista para o oceano</li>
-                <li><strong>Barracas de praia</strong> - Opções mais simples e autênticas</li>
-                <li><strong>Restaurantes no centro</strong> - Variedade de pratos regionais e internacionais</li>
-                <li><strong>Tapiocarias</strong> - Tapiocas recheadas a qualquer hora do dia</li>
-            </ul>
+        <!-- Pratos Nordestinos -->
+        <section aria-labelledby="nordeste-title" style="margin-bottom:3rem;">
+          <span class="tag">🌵 Tradição</span>
+          <h2 class="section-title" id="nordeste-title">Sabores do <span>Nordeste</span></h2>
+          <p class="section-subtitle">A culinária sertaneja encontra o litoral em pratos cheios de identidade.</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <span class="emoji">🥩</span>
+              <h3>Carne de Sol com Macaxeira</h3>
+              <p>Carne seca curada ao sol, acompanhada de mandioca cozida e manteiga de garrafa.</p>
+              <ul>
+                <li>Carne de sol artesanal</li>
+                <li>Macaxeira cozida</li>
+                <li>Manteiga de garrafa</li>
+              </ul>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🍛</span>
+              <h3>Baião de Dois</h3>
+              <p>Arroz com feijão verde, queijo coalho, carne seca e temperos nordestinos. Prato completo.</p>
+              <ul>
+                <li>Arroz e feijão verde</li>
+                <li>Queijo coalho grelhado</li>
+                <li>Carne seca desfiada</li>
+              </ul>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🫓</span>
+              <h3>Tapioca Recheada</h3>
+              <p>Crepe de goma de tapioca com recheios variados: coco, queijo, frango ou doce de leite.</p>
+              <ul>
+                <li>Goma de tapioca fresca</li>
+                <li>Recheios à escolha</li>
+                <li>Servida quente</li>
+              </ul>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🌽</span>
+              <h3>Cuscuz Nordestino</h3>
+              <p>Feito com flocos de milho, servido com manteiga, queijo coalho ou ovo estrelado.</p>
+              <ul>
+                <li>Flocos de milho</li>
+                <li>Queijo coalho</li>
+                <li>Manteiga de garrafa</li>
+              </ul>
+            </article>
+          </div>
         </section>
 
-        <section>
-            <h2>Dica Especial</h2>
-            <p><em>Não deixe de experimentar o peixe fresco do dia! Os pescadores locais trazem o pescado todas as manhãs, garantindo frescor e qualidade incomparáveis.</em></p>
+        <!-- Bebidas e Sobremesas -->
+        <section aria-labelledby="bebidas-title" style="margin-bottom:3rem;">
+          <span class="tag">🥥 Bebidas & Doces</span>
+          <h2 class="section-title" id="bebidas-title">Bebidas e <span>Sobremesas</span></h2>
+          <p class="section-subtitle">Refrescantes, tropicais e cheias de sabor.</p>
+          <div class="food-grid">
+            <article class="food-card">
+              <span class="emoji">🥥</span>
+              <h3>Água de Coco</h3>
+              <p>Servida gelada direto do coco verde, colhido na hora. Hidratação natural e refrescante.</p>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🍹</span>
+              <h3>Cajuína</h3>
+              <p>Suco clarificado de caju, bebida típica do Nordeste. Doce, levemente ácida e muito refrescante.</p>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🍌</span>
+              <h3>Cartola</h3>
+              <p>Banana frita com queijo coalho derretido, canela e açúcar. Sobremesa clássica nordestina.</p>
+            </article>
+            <article class="food-card">
+              <span class="emoji">🍬</span>
+              <h3>Cocada</h3>
+              <p>Doce de coco tradicional, disponível em versões branca, queimada e com frutas regionais.</p>
+            </article>
+          </div>
         </section>
-    </main>
 
-    <footer>
-        <p><a href="index.html">Página Inicial</a> | <a href="pontos-turisticos.html">Pontos Turísticos</a> | <a href="cultura.html">Cultura</a></p>
-    </footer>
+        <div class="tip-box">
+          <h3>💡 Dica do Pescador</h3>
+          <p>Chegue cedo ao mercado de peixe! Os pescadores locais trazem o pescado fresco todas as manhãs. Quanto mais cedo, maior a variedade e melhor o preço. Pergunte pelo "peixe do dia" em qualquer restaurante.</p>
+        </div>
+
+      </div>
+
+      <aside aria-label="Onde comer e dicas">
+        <h3>🍴 Onde Comer</h3>
+        <ul>
+          <li>🌊 Restaurantes à beira-mar</li>
+          <li>🏖 Barracas de praia</li>
+          <li>🏘 Restaurantes no centro</li>
+          <li>🫓 Tapiocarias locais</li>
+          <li>🐟 Mercado de peixe</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;">⏰ Horários</h3>
+        <ul>
+          <li>☀ Café: 7h–10h</li>
+          <li>🍽 Almoço: 11h–15h</li>
+          <li>🌙 Jantar: 18h–23h</li>
+          <li>🫓 Tapioca: 24h</li>
+        </ul>
+        <h3 style="margin-top:1.5rem;">🔗 Navegação</h3>
+        <ul>
+          <li><a href="index.html" style="color:rgba(255,255,255,0.8);">🏠 Home</a></li>
+          <li><a href="pontos-turisticos.html" style="color:rgba(255,255,255,0.8);">📍 Pontos Turísticos</a></li>
+          <li><a href="cultura.html" style="color:rgba(255,255,255,0.8);">🎵 Cultura</a></li>
+        </ul>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>São Miguel do Gostoso</h4>
+          <p>Guia turístico oficial da cidade mais gostosa do Rio Grande do Norte.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pontos-turisticos.html">Pontos Turísticos</a></li>
+            <li><a href="gastronomia.html">Gastronomia</a></li>
+            <li><a href="cultura.html">Cultura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Localização</h4>
+          <ul>
+            <li>📍 Litoral Norte — RN</li>
+            <li>✈ 100km de Natal</li>
+            <li>🌐 Brasil — Nordeste</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projeto</h4>
+          <ul>
+            <li>👤 Autor: Koldri</li>
+            <li>📚 UC7 — Dev Web</li>
+            <li><a href="../index.html">← Voltar ao UC7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Guia Turístico — São Miguel do Gostoso, RN. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
 </body>
 </html>
