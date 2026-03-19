@@ -278,7 +278,7 @@ footer ul a:hover { color: var(--orange); }
     text-transform: uppercase;
     z-index: 1;
 }
-.plan-card img { width: 100%; height: 200px; object-fit: cover; }
+.plan-card img { width: 100%; height: 150px; object-fit: cover; }
 .plan-body { padding: 1.5rem; }
 .plan-body h3 { font-size: 1.3rem; font-weight: 800; color: var(--green-dark); margin-bottom: 0.5rem; }
 .plan-body p { color: #666; font-size: 0.95rem; line-height: 1.5; }
@@ -303,10 +303,12 @@ footer ul a:hover { color: var(--orange); }
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 200px;
-    gap: 0.8rem;
+    grid-auto-rows: 140px;
+    gap: 0.6rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.gallery-item { overflow: hidden; border-radius: 12px; }
+.gallery-item { overflow: hidden; border-radius: 10px; }
 .gallery-item.tall { grid-row: span 2; }
 .gallery-item.wide { grid-column: span 2; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
@@ -316,12 +318,14 @@ footer ul a:hover { color: var(--orange); }
 .img-strip {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.8rem;
+    gap: 0.6rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 .img-strip img {
-    width: 100%; height: 160px;
+    width: 100%; height: 120px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: transform 0.3s;
 }
 .img-strip img:hover { transform: scale(1.04); }
@@ -345,4 +349,25 @@ footer ul a:hover { color: var(--orange); }
     .btn-primary, .btn-green, .btn-secondary { padding: 0.85rem 1.5rem; font-size: 0.95rem; }
     .page-hero { padding: 3rem 5%; }
     .page-hero h1 { font-size: 1.8rem; }
+}
+
+/* ── BOTÃO FIXO WHATSAPP ── */
+.wpp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    background: #25D366;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+.wpp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
 }
