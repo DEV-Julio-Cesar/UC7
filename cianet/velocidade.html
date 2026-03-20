@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Velocidade — Cianet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-text">CIA<span>NET</span></a>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="planos.html">Planos Fibra</a></li>
+            <li><a href="celular.html">Chip 5G</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="contato.html">Atendimento</a></li>
+            <li><a href="velocidade.html" class="active">⚡ Velocidade</a></li>
+        </ul>
+    </nav>
+    <div class="header-actions">
+        <a href="https://wa.me/558432634154" class="header-wpp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="18" height="18">
+                <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.47 2.027 7.773L0 32l8.476-2.004A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.853l-.485-.288-5.03 1.188 1.21-4.898-.317-.503A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.87c-.398-.2-2.355-1.162-2.72-1.294-.365-.133-.63-.2-.896.2-.265.398-1.03 1.294-1.262 1.56-.232.265-.465.298-.863.1-.398-.2-1.68-.619-3.2-1.974-1.183-1.054-1.982-2.356-2.214-2.754-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.2-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.2-.896-2.16-1.228-2.957-.323-.776-.65-.67-.896-.683l-.763-.013c-.265 0-.697.1-1.062.497-.365.398-1.394 1.362-1.394 3.32s1.427 3.85 1.626 4.116c.2.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.272.838.954.303 1.823.26 2.51.158.765-.114 2.355-.963 2.688-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.465z"/>
+            </svg>
+            WhatsApp
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=br.com.appdoprovedor.cianet" target="_blank" rel="noopener" class="header-app-btn">📱 Área do Cliente</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section style="background: var(--gray-bg); min-height: calc(100vh - 70px); padding: 4rem 5%;">
+    <div class="text-center">
+        <span class="section-label">Cianet</span>
+        <h2 class="section-title">Teste sua <span>Velocidade</span></h2>
+        <p class="section-sub">Clique em iniciar e veja a velocidade real da sua conexão agora.</p>
+    </div>
+    <div style="
+        margin: 2.5rem auto 0;
+        max-width: 900px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+        border: 3px solid var(--green);
+        background: #000;
+    ">
+        <iframe
+            src="https://fast.com"
+            width="100%"
+            height="600"
+            style="border:0; display:block;"
+            title="Teste de Velocidade Fast.com"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <p style="text-align:center; margin-top:1rem; font-size:0.8rem; color:#999;">
+        Teste fornecido por <a href="https://fast.com" target="_blank" rel="noopener" style="color:var(--green); font-weight:700;">fast.com</a> — Netflix
+    </p>
+</section>
+
+<footer>
+    <div class="footer-brand">
+        <a href="index.html" class="logo-text">CIA<span>NET</span></a>
+        <p>Conectando você ao mundo com ultravelocidade e atendimento humanizado.</p>
+    </div>
+    <div>
+        <h4>Páginas</h4>
+        <ul>
+            <li><a href="planos.html">Planos Fibra</a></li>
+            <li><a href="celular.html">Chip 5G</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="contato.html">Atendimento</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contato</h4>
+        <ul>
+            <li>(84) 3263-4154</li>
+            <li>Natal — RN</li>
+            <li>Seg a Dom: 8h às 22h</li>
+            <li><a href="https://wa.me/558432634154">WhatsApp</a></li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-bottom">
+    &copy; 2026 <span>Cianet</span> Provedor de Internet. Todos os direitos reservados. — Natal, RN
+</div>
+
+<!-- BOTÃO FIXO WHATSAPP -->
+<a href="https://wa.me/558432634154" class="wpp-float" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.47 2.027 7.773L0 32l8.476-2.004A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.853l-.485-.288-5.03 1.188 1.21-4.898-.317-.503A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.87c-.398-.2-2.355-1.162-2.72-1.294-.365-.133-.63-.2-.896.2-.265.398-1.03 1.294-1.262 1.56-.232.265-.465.298-.863.1-.398-.2-1.68-.619-3.2-1.974-1.183-1.054-1.982-2.356-2.214-2.754-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.2-.232.265-.398.398-.664.133-.265.066-.497-.033-.697-.1-.2-.896-2.16-1.228-2.957-.323-.776-.65-.67-.896-.683l-.763-.013c-.265 0-.697.1-1.062.497-.365.398-1.394 1.362-1.394 3.32s1.427 3.85 1.626 4.116c.2.265 2.808 4.287 6.803 6.013.951.41 1.693.655 2.272.838.954.303 1.823.26 2.51.158.765-.114 2.355-.963 2.688-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.465z"/>
+    </svg>
+</a>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    const overlay = document.getElementById('nav-overlay');
+    function closeMenu() { toggle.classList.remove('open'); nav.classList.remove('open'); overlay.classList.remove('open'); }
+    toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        overlay.classList.toggle('open', isOpen);
+    });
+    overlay.addEventListener('click', closeMenu);
+</script>
+</body>
+</html>

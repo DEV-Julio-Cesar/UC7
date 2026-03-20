@@ -371,3 +371,40 @@ footer ul a:hover { color: var(--orange); }
     transform: scale(1.1);
     box-shadow: 0 6px 28px rgba(37,211,102,0.7);
 }
+
+/* ── HEADER ACTIONS ── */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.header-wpp {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.header-wpp:hover { opacity: 0.75; }
+
+.header-app-btn {
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    color: var(--white);
+    padding: 0.55rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 3px 12px rgba(0,166,81,0.35);
+}
+.header-app-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,166,81,0.5); }
+
+@media (max-width: 768px) {
+    .header-actions { display: none; }
+}
